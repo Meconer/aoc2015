@@ -1,4 +1,4 @@
 (executable
  (name main)
  (public_name aoc2015)
- (libraries day1 day2 day3 core))
+ (libraries day1 day2 day3 day4 core))
