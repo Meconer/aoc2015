@@ -68,7 +68,7 @@ let resultP1 = calcA day7Input
 
 let rec replaceB acc lines =
   match lines with 
-  | [] -> acc
+  | [] -> List.rev acc
   | h :: t -> if String.is_suffix h ~suffix:"-> b" then
                 replaceB (((string_of_int resultP1) ^ " -> b") :: acc) t
               else
