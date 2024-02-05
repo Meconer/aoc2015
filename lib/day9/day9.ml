@@ -1,5 +1,5 @@
 open Core
-let filename = "lib/day9/day9.example.txt"
+(* let filename = "lib/day9/day9.example.txt" *)
 let filename = "lib/day9/day9.input.txt"
 
 let day9Input = In_channel.read_lines filename
