@@ -152,13 +152,6 @@ let parse_json (tokens : token list) : json_value =
   | _ -> failwith "Unexpected tokens after parsing"
   
 
-(* let numbersP2 = parseNumbersP2 day12Input
-let resultP2 = List.fold ~init:0 ~f:(+) numbersP2 *)
-
- let json_string = "{\"name\": \"John\", \"age\": 30, \"arr\" : [1,20,\"red\"], \"is_student\": \"true\", \"oa\": 50}"
-let tokens = tokenize day12Input
-let json = parse_json tokens
-
 let rec sum_numbers (json : json_value ) : int =
   match json with
   | String _ -> 0
@@ -181,6 +174,8 @@ let rec sum_numbers_without_red (json: json_value) : int =
         if hasRed then 0 else List.fold ~f:(+) ~init:0 (List.map ~f:(fun (_,v) -> sum_numbers_without_red v) s) 
   | Array a -> List.fold ~f:(+) ~init:0 (List.map ~f:( sum_numbers_without_red ) a)
 
+let tokens = tokenize day12Input
+let json = parse_json tokens
+
 let resultP1 = sum_numbers json
 let resultP2 = sum_numbers_without_red json
-(* let _ = List.iter ~f:(fun token -> Printf.printf "%s " token.value) tokens *)
