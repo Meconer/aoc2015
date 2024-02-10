@@ -75,7 +75,7 @@ let tokenize (input: string) : token list =
     in
     let (rest_input, value) = read_keyword input [] in
       (* List.iter ~f:(fun token ->Printf.printf "%s\n" token.value) (List.rev acc) ; *)
-      Printf.printf "%s\n" (String.of_char_list value);
+      (* Printf.printf "%s\n" (String.of_char_list value); *)
       let num_value = int_of_string (String.of_char_list value) in
       tokenize_helper rest_input ({ token_type = Number num_value; value = String.of_char_list value } :: acc)
   in
