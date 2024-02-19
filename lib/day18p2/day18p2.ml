@@ -18,13 +18,6 @@ let idxToCoord idx = {col = idx mod width; row =  idx / width}
 let toggle n = 
   if n = 1 then 0 else 1
 
-let changePos grid col row ch  =
-  let idx = coordToIdx {col;row} in
-  match ch with 
-  | On -> grid.(idx) <- 1
-  | Off -> grid.(idx) <- 0
-
-
 let corners = [
   { col = 0 ; row = 0};
   { col = width - 1 ; row = 0};

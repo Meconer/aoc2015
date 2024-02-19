@@ -1,7 +1,7 @@
 open Core
 
-(* let filename = "lib/day18/day18.input.txt" *)
-let filename = "lib/day18/day18.example.txt"
+let filename = "lib/day18/day18.input.txt"
+(* let filename = "lib/day18/day18.example.txt" *)
 let day18Input = In_channel.read_lines filename
 
 type pos = {col : int; row : int}
@@ -109,36 +109,5 @@ let rec doIterations remaining =
 
 let _ = processLines grid day18Input
 
-let _ = doIterations 4
+let _ = doIterations 100
 let resultP1 = Array.fold ~init:0 ~f:(+) grid 
-
-
-
-
-(* For part 2 *)
-
-let _ = processLines grid day18Input
-
-let corners = [
-  { col = 0 ; row = 0};
-  { col = width - 1 ; row = 0};
-  { col = 0 ; row = height - 1};
-  { col = width - 1 ; row = height - 1};
-]
-
-let _ = List.iter corners ~f:(fun p -> changePos grid p.col p.row On)
-
-(*Redefine changePos*)
-let changePos col row ch  =
-  Printf.printf "New changePos";
-  if  List.exists corners ~f:(fun p -> p.col = col && p.row = row ) then 
-    ()
-  else begin
-    let idx = coordToIdx {col;row} in
-    match ch with 
-    | On -> grid.(idx) <- 1
-    | Off -> grid.(idx) <- 0
-  end
-
-let _ = doIterations 4
-let resultP2 = Array.fold ~init:0 ~f:(+) grid 
