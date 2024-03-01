@@ -61,3 +61,6 @@ Printf.printf "Day20 part 2 : %d\n\n" ( Day20.resultP2);
 
 Printf.printf "Day21 part 1 : %d\n" ( Day21.resultP1);
 Printf.printf "Day21 part 2 : %d\n\n" ( Day21.resultP2);
+
+Printf.printf "Day22 part 1 : %d\n" ( Day22.resultP1);
+Printf.printf "Day22 part 2 : %d\n\n" ( Day22.resultP2);
