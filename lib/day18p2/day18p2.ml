@@ -43,7 +43,7 @@ let setGridLine grid lineNo line =
 
 let processLines grid lines = 
   let _ = List.iteri lines ~f:( fun lineNo line -> 
-    Printf.printf "%s\n" line;
+    (* Printf.printf "%s\n" line; *)
     setGridLine grid lineNo line ) in ()
   
 

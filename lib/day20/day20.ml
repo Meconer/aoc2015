@@ -20,7 +20,7 @@ let rec test highest nAtHighest  n step =
   else 
     let count = presentsAtHouse n in
     if count > highest then begin
-      Printf.printf "House %d got %d presents. Diff is %d\n" n count (n - nAtHighest);
+      (* Printf.printf "House %d got %d presents. Diff is %d\n" n count (n - nAtHighest); *)
       if count > day20Input then n else
       test count n (n+step) step
     end
@@ -46,7 +46,7 @@ let rec testP2 highest nAtHighest  n step =
   else 
     let count = presentsAtHouseP2 n in
     if count > highest then begin
-      Printf.printf "House %d got %d presents. Diff is %d\n" n count (n - nAtHighest);
+      (* Printf.printf "House %d got %d presents. Diff is %d\n" n count (n - nAtHighest); *)
       if count > day20Input then n else
       testP2 count n (n+step) step
     end
